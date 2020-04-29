@@ -18,4 +18,19 @@ class Patient
     @@all 
   end 
   
+  def appointments 
+    Appointments.all.select{|appointment| appointment.patient}
+  end 
+  
   def doctors 
+    appointments.map{|x| x.doctor}
+  end 
+  
+end 
+    
+    
+    
+    
+    
+    
+    
